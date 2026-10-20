@@ -6,10 +6,20 @@ Per-region translucency for DeepSeek Harness Desktop, backed by a screen-aligned
 
 > 状态：可用，但**分区选择器绑定 DSH 版本**（见[兼容性](#兼容性)）。失效时插件会自我提示，不会静默坏掉。
 
-<!-- 截图占位：发布前替换为真实截图 -->
-<!-- ![整窗效果](docs/images/overview.png) -->
-<!-- ![边框无缝衔接](docs/images/edge.png) -->
-<!-- ![控制面板](docs/images/panel.png) -->
+![演示：照片壁纸透过界面显现](docs/images/demo.gif)
+
+**[▶ 完整演示（24 秒 · 无声 · 757KB）](docs/video/demo.mp4)**
+
+> 演示中的左侧栏做了磨砂处理，用于遮盖个人会话名。
+
+---
+
+## 效果
+
+![整窗效果](docs/images/overview.png)
+
+真实照片壁纸透过半透明界面显现，右下角是控制面板。
+五个分区各自独立调节——图中「对话区」被压到 0.21，所以照片几乎完全透出来。
 
 ---
 
