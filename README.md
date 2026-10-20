@@ -90,19 +90,24 @@ background-size = SW px × SH px        （与 Windows「填充」一致）
 
 ## 安装
 
-### npm（推荐）
-
-```sh
-dsh plugin --profile desktop add dsh-desktop-transparency
-```
-
-装完**完全退出 DSH Desktop 再重新打开**（刷新页面不够）。
-
-### 从 GitHub
+### 从 GitHub（当前可用）
 
 ```sh
 dsh plugin --profile desktop add github:biotechdrli-byte/dsh-desktop-transparency
 ```
+
+装完**完全退出 DSH Desktop 再重新打开**（刷新页面不够）。
+
+### npm
+
+<!-- npm 发布后启用以下说明，并把上面一节降级为备选 -->
+<!--
+```sh
+dsh plugin --profile desktop add dsh-desktop-transparency
+```
+-->
+
+即将发布。
 
 ### 卸载
 
