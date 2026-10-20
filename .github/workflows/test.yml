@@ -1,0 +1,38 @@
+name: test
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  test:
+    # host 半侧要读 Windows 注册表/壁纸目录，测试只在 Windows 上才是完整的
+    runs-on: windows-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        node: [20, 22, 24]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+      - name: Run tests
+        run: npm test
+
+  # 确认发布包里确实带着 cordis.patch.yml —— 缺了它插件装上也挂不上
+  pack-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Verify npm package contents
+        run: |
+          npm pack --dry-run 2>&1 | tee pack.txt
+          grep -q "cordis.patch.yml" pack.txt
+          grep -q "lib/index.js" pack.txt
+          grep -q "lib/client.js" pack.txt

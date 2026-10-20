@@ -1,0 +1,51 @@
+name: publish
+
+# 打 tag 即发布到 npm。需要仓库 Secret: NPM_TOKEN
+# （npm → Access Tokens → Granular Access Token，勾选 read/write 该包）
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  publish:
+    # host 半侧要读 Windows 壁纸，测试只在 Windows 上完整，所以这里也用 Windows
+    runs-on: windows-latest
+    permissions:
+      contents: read
+      id-token: write # npm provenance
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          registry-url: https://registry.npmjs.org
+
+      - name: 校验 tag 与 package.json 版本一致
+        shell: bash
+        run: |
+          PKG=$(node -p "require('./package.json').version")
+          TAG="${GITHUB_REF_NAME#v}"
+          echo "package.json = $PKG / tag = $TAG"
+          if [ "$PKG" != "$TAG" ]; then
+            echo "::error::版本不一致：tag 是 $TAG，package.json 是 $PKG"
+            exit 1
+          fi
+
+      - name: 测试
+        run: npm test
+
+      - name: 确认发布包含必需文件
+        shell: bash
+        run: |
+          npm pack --dry-run 2>&1 | tee pack.txt
+          grep -q "cordis.patch.yml" pack.txt
+          grep -q "lib/index.js" pack.txt
+          grep -q "lib/client.js" pack.txt
+
+      - name: 发布
+        run: npm publish --access public --provenance
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

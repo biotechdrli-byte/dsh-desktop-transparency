@@ -1,0 +1,55 @@
+{
+  "name": "dsh-desktop-transparency",
+  "version": "0.7.0",
+  "description": "DSH Desktop 的分区透明壁纸主题：按屏幕坐标钉住系统壁纸，让窗口看起来真的透到桌面，并可分区调节透明度。Screen-aligned wallpaper behind a per-region translucent UI.",
+  "license": "MIT",
+  "author": "biotechdrli-byte",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib/index.js",
+    "lib/client.js",
+    "cordis.patch.yml",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "test": "node test/client.test.mjs && node test/host.test.mjs"
+  },
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "theme",
+    "transparency",
+    "wallpaper",
+    "glassmorphism",
+    "electron"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/biotechdrli-byte/dsh-desktop-transparency.git"
+  },
+  "homepage": "https://github.com/biotechdrli-byte/dsh-desktop-transparency#readme",
+  "bugs": {
+    "url": "https://github.com/biotechdrli-byte/dsh-desktop-transparency/issues"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": []
+    }
+  }
+}

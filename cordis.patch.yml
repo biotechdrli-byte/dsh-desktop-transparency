@@ -1,0 +1,6 @@
+# 随包分发的 patch —— 由 package.json 的 dsh.bundle.patch 引用。
+#
+# 纯客户端插件：不禁用任何官方插件，只把自己插进去。
+- insert:
+    - id: dsh-desktop-transparency
+      name: dsh-desktop-transparency

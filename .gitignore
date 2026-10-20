@@ -1,0 +1,19 @@
+# 依赖
+node_modules/
+
+# 日志
+*.log
+npm-debug.log*
+
+# 编辑器 / 系统
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# 本地临时
+.tmp/
+*.local
+
+# 打包产物
+*.tgz
