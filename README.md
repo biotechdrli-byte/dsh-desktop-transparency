@@ -6,9 +6,9 @@ Per-region translucency for DeepSeek Harness Desktop, backed by a screen-aligned
 
 > 状态：可用，但**分区选择器绑定 DSH 版本**（见[兼容性](#兼容性)）。失效时插件会自我提示，不会静默坏掉。
 
-![演示：照片壁纸透过界面显现](docs/images/demo.gif)
+![演示：照片壁纸透过界面显现](https://raw.githubusercontent.com/biotechdrli-byte/dsh-desktop-transparency/main/docs/images/demo.gif)
 
-**[▶ 完整演示（24 秒 · 无声 · 757KB）](docs/video/demo.mp4)**
+**[▶ 完整演示（24 秒 · 无声 · 757KB）](https://raw.githubusercontent.com/biotechdrli-byte/dsh-desktop-transparency/main/docs/video/demo.mp4)**
 
 > 演示与截图中的左侧栏已做磨砂处理，用于遮盖个人会话名。
 
@@ -18,7 +18,7 @@ Per-region translucency for DeepSeek Harness Desktop, backed by a screen-aligned
 
 ### 窗口不是贴了一张壁纸，而是和屏幕对齐
 
-![窗口浮在桌面上，边框内外壁纸无缝衔接](docs/images/edge.jpg)
+![窗口浮在桌面上，边框内外壁纸无缝衔接](https://raw.githubusercontent.com/biotechdrli-byte/dsh-desktop-transparency/main/docs/images/edge.jpg)
 
 这是本插件最核心的证据。窗口**没有最大化**，浮在桌面之上：
 
@@ -31,21 +31,21 @@ Per-region translucency for DeepSeek Harness Desktop, backed by a screen-aligned
 
 ### 照片壁纸透过界面
 
-![整窗效果](docs/images/overview.jpg)
+![整窗效果](https://raw.githubusercontent.com/biotechdrli-byte/dsh-desktop-transparency/main/docs/images/overview.jpg)
 
 五个分区各自独立调节——图中「对话区」被压到 **0.21**，照片几乎完全透出来，
 而左栏（0.81）与浮层（0.96）依然保持可读。
 
 ### 分区独立控制
 
-![右侧栏展开时的多分区效果](docs/images/regions.jpg)
+![右侧栏展开时的多分区效果](https://raw.githubusercontent.com/biotechdrli-byte/dsh-desktop-transparency/main/docs/images/regions.jpg)
 
 右侧栏展开时同样独立生效：图中右侧栏 **0.47**、对话区 **0.62**、壁纸模糊 **18px**。
 右侧栏比对话区更透明，是因为它是辅助面板，不需要那么高的对比度。
 
 ### 控制面板
 
-<img src="docs/images/panel.png" width="330" alt="控制面板">
+<img src="https://raw.githubusercontent.com/biotechdrli-byte/dsh-desktop-transparency/main/docs/images/panel.png" width="330" alt="控制面板">
 
 十个控件：五个分区透明度、壁纸模糊、背景压暗、对齐偏移 X / Y，外加偏移归零与整体还原。
 
